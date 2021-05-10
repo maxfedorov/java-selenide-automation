@@ -1,4 +1,4 @@
-package com.github.maxfedorov.selenide;
+package com.github.maxfedorov.github;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 public class TestBase {
     @BeforeAll
     static void setup() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true).savePageSource(false));
         Configuration.startMaximized = true;
     }
 }
